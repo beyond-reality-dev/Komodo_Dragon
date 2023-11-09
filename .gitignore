@@ -16,10 +16,9 @@ temp.errors
 *.ini
 .d/
 firmware/
-include/*
-!api.h
-!main.h
-!config.hpp
+include/display/
+include/okapi/
+include/pros/
 
 # Makefiles
 Makefile
