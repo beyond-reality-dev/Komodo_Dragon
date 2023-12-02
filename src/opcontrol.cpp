@@ -46,13 +46,10 @@ void opcontrol() {
 
         // Use the R1 button to fire the slingshot.
         if (master.get_digital(DIGITAL_R1)) {
-            slingshot.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
-            pros::delay(250);
-            slingshot.set_brake_mode(pros::E_MOTOR_BRAKE_HOLD);
+            slingshot.set_brake_modes(pros::E_MOTOR_BRAKE_COAST);
             slingshot.move_velocity(100);
-            pros::delay(100);
-            slingshot.brake();
-            pros::delay(20);
+            pros::delay(1000);
+            slingshot.move_velocity(0);
         }
 
 	}
