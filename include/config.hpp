@@ -8,8 +8,7 @@ extern int RIGHT_BACK_PORT;
 extern int RIGHT_FRONT_PORT;
 
 // Declare the other motor ports.
-extern int SLINGSHOT_PORT_1;
-extern int SLINGSHOT_PORT_2;
+extern int SPINNER_PORT;
 
 // Declare the pneumatic ports.
 extern int LEFT_EXPANDER_PORT;
@@ -36,9 +35,7 @@ extern pros::Motor_Group left_wheels;
 extern pros::Motor_Group right_wheels;
 
 // Declare the other motors.
-extern pros::Motor slingshot_1;
-extern pros::Motor slingshot_2;
-extern pros::Motor_Group slingshot;
+extern pros::Motor spinner;
 
 // Declare the pneumatics.
 extern pros::ADIDigitalOut left_expander;

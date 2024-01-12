@@ -19,6 +19,7 @@ void opcontrol() {
 
 	// Set booleans for the toggle switches.
 	bool expansionActivated = false;
+    bool spinnerToggled = false;
 
 	while (true) {
 
@@ -44,12 +45,17 @@ void opcontrol() {
             pros::delay(20);
         }
 
-        // Use the R1 button to fire the slingshot.
-        if (master.get_digital(DIGITAL_R1)) {
-            slingshot.set_brake_modes(pros::E_MOTOR_BRAKE_COAST);
-            slingshot.move_velocity(100);
-            pros::delay(1000);
-            slingshot.brake();
+        // Use the R1 button to toggle the spinner.
+        if (master.get_digital(DIGITAL_R1) && spinnerToggled == false) {
+            spinner.move_velocity(600);
+            spinnerToggled = true;
+            pros::delay(20);
+        }
+
+        else if (master.get_digital(DIGITAL_R1) && spinnerToggled == true) {
+            spinner.move_velocity(0);
+            spinnerToggled = false;
+            pros::delay(20);
         }
 
 	}
